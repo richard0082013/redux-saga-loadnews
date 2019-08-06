@@ -12,7 +12,7 @@ function* fetchNews() {
 }
 
 function* watchNewsRequest() {
-  yield takeEvery(actions.getNews().type, fetchNews)
+  yield takeEvery(actions.Types.GET_NEWS, fetchNews)
 }
 
 const newsSagas = [

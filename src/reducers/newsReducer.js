@@ -1,9 +1,11 @@
+import {Types} from '../actions'
+
 export const newsReducer = (state={}, action) => {
   switch(action.type){
-    case 'GET_NEWS': {
+    case Types.GET_NEWS: {
       return {...state, loading: true}
     }
-    case 'GET_NEWS_SUCCESS': {
+    case Types.GET_NEWS_SUCCESS: {
       return {...state, news:action.payload.news, loading: false}
     }
     default: {
@@ -11,3 +13,9 @@ export const newsReducer = (state={}, action) => {
     }
   }
 }
+  
+
+
+// define types in constant
+// import types from constant to saga, action, reducer
+// using different types for reducer case
